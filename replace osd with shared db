@@ -64,8 +64,7 @@ ceph orch daemon add osd s3-06:data_devices=/dev/sdb,db_devices=ceph-4e507818-90
 где:
 s3-06 - имя ноды, где меняется диск
 data_devices=/dev/sdb - заменённый диск под данные
-db_devices=ceph-4e507818-90df-4c53-8321-00bf18b48896/osd-db-448112cd-09b6-
-45e9-8bee-013e1ef0f4ca - существующий том с базой (формат db_devices=VG/LV)
+db_devices=ceph-4e507818-90df-4c53-8321-00bf18b48896/osd-db-448112cd-09b6-45e9-8bee-013e1ef0f4ca - существующий том с базой (формат db_devices=VG/LV)
 
 Если OSD не создаётся, указывая причину в том, что он уже создан, удаляем
 каталог с ним
@@ -78,8 +77,7 @@ ceph orch resume
 12. Дожидаемся пока OSD перейдёт в статус IN+UP, затем корректируем
 привязку поднятого OSD к провижн группе:
 в файле приводим значение поля "service_name" к изначальному
-nano /var/lib/ceph/b12308900-55yh-22ca-a256-
-b66gb4879765/osd.18/unit.meta
+nano /var/lib/ceph/b12308900-55yh-22ca-a256-b66gb4879765/osd.18/unit.meta
 "service_name": "osd.s3-06_hdd03"
 Сохраняем файл, дожидаемся пока оркестратор перечитает конфигурацию
 
